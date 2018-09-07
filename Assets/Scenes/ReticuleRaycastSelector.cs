@@ -17,6 +17,7 @@ public class ReticuleRaycastSelector : MonoBehaviour
     private GameObject previous= null;
     private float scale = 0.001f;
     public Sprite[] z;
+    private Color sepia = new Color32(174, 137, 100, 255);
 
     // Use this for initialization
     void Start()
@@ -38,6 +39,7 @@ public class ReticuleRaycastSelector : MonoBehaviour
                 current.GetComponent<SpriteRenderer>().transform.localScale = new Vector3(scale, scale, scale);
                 scale += 0.001f;
             }
+            current.GetComponent<SpriteRenderer>().color = Color.white;
 
             previous = current;
 
@@ -49,6 +51,7 @@ public class ReticuleRaycastSelector : MonoBehaviour
             if(previous != null)
             {
                 previous.GetComponent<SpriteRenderer>().transform.localScale = new Vector3(0.01F, 0.01F, 0.01F);
+                previous.GetComponent<SpriteRenderer>().color = sepia;
             }
             scale = 0.01f;
         }
