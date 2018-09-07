@@ -13,10 +13,10 @@ public class ReticuleRaycastSelector : MonoBehaviour
 
     private SpriteRenderer spriteR;
 
-    private SpriteRenderer[] sprites;
-    private List<Sprite> x;
-    GameObject previous;
+    public SpriteRenderer[] sprites;
+    private GameObject previous= null;
     private float scale = 0.001f;
+    public Sprite[] z;
 
     // Use this for initialization
     void Start()
@@ -33,30 +33,24 @@ public class ReticuleRaycastSelector : MonoBehaviour
         if (Physics.Raycast(this.transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
         {
              GameObject current = hit.collider.gameObject;
-             current.GetComponent<SpriteRenderer>().transform.localScale = new Vector3(0.015F, 0.015F, 0.015F);
-            // for(int i = 0; i < sprites.Length; i++){
-            //     if(GameObject.ReferenceEquals(current.GetComponent<SpriteRenderer>(), sprites[i].GetComponent<SpriteRenderer>())){
-            //         sprites[i].GetComponent<SpriteRenderer>().transform.localScale =  new Vector3(0.01F, 0.01F, 0.01F);
-            //     }
-                
-            // }
-            
-
-            if (current != previous)
+            if (scale < 0.015f)
             {
-                Debug.Log("diff");
-                previous = current;
-
+                current.GetComponent<SpriteRenderer>().transform.localScale = new Vector3(scale, scale, scale);
+                scale += 0.001f;
             }
+
+            previous = current;
 
             reticle.UpdateRadialProgress();
             // previous.GetComponent<Renderer>().material.color = Color.blue;
         }
         else
         {
-            previous.GetComponent<SpriteRenderer>().transform.localScale = new Vector3(0.01F, 0.01F, 0.01F);
-            reticle.ResetRadialProgress();
-            // current.GetComponent<SpriteRenderer>().color = new Color(0.3F, 0.4F, 0.6F);
+            if(previous != null)
+            {
+                previous.GetComponent<SpriteRenderer>().transform.localScale = new Vector3(0.01F, 0.01F, 0.01F);
+            }
+            scale = 0.01f;
         }
     }
 
