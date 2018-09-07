@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="aloes" size="1920.000000 1529.491577" />
+    <ImageTarget name="Fruitdefendu" size="1920.000000 1375.580200" />
+    <ImageTarget name="radeau" size="1920.000000 1274.591553" />
+    <ImageTarget name="Sailor" size="1920.000000 1271.292480" />
+    <ImageTarget name="Scarabee" size="1920.000000 1278.212280" />
     <ImageTarget name="photoMorgane3" size="1920.000000 1080.000000" />
   </Tracking>
 </QCARConfig>
