@@ -39,7 +39,6 @@ public class Reticle : MonoBehaviour
 
         RadialPercent += 0.01f;
 
-
         if (RadialPercent <= 1)
             radialProgress.GetComponent<UnityEngine.UI.Image>().fillAmount = RadialPercent;
     }
