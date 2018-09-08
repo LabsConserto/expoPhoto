@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="champi" size="500.000000 693.000000" />
+    <ImageTarget name="meurtrissure-organique-cac" size="1920.000000 1280.595337" />
     <ImageTarget name="aloes" size="1920.000000 1529.491577" />
     <ImageTarget name="Fruitdefendu" size="1920.000000 1375.580200" />
     <ImageTarget name="radeau" size="1920.000000 1274.591553" />
